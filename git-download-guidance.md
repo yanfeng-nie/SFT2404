@@ -18,3 +18,9 @@ https://git-scm.com/downloads/win
 
 1.   可以将资料打包成zip格式发给仓库运营者，附注好上传需求（比如是否建立文件夹单独存放，readme文件要不要等），由运营者代为上传。
 2.   使用Pull Request功能上传资料并等待运营者审批
+
+## 怎么克隆github上的仓库？
+
+1.   选择一个空文件夹（随便在哪里都可以）
+2.   右键，在更多选项里找到"Open Git Bash Here"或带有"Git Bash"的选项
+3.   进入git命令行后，键入命令 git clone "(仓库具体网址)" 即可。如 git clone "https://github.com/Block-Oier/SFT2404" 即可克隆本仓库到本地文件夹。
