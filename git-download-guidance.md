@@ -4,7 +4,7 @@ git是用来克隆github上的仓库，在本地完成修改后再上传的工�
 
 ## 在哪里下载？
 
-对于非Windows系统，在https://git-scm.com/downloads下载
+对于非Windows系统，在 https://git-scm.com/downloads 下载
 
 如果你使用Windows系统，那么直接下载仓库中的Git-2.47.0.2-64-bit.exe可执行文件后点击安装即可。
 
