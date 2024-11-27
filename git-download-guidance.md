@@ -29,8 +29,6 @@ git是用来克隆github上的仓库，在本地完成修改后再上传的工�
 
 fork操作指将其他账号的仓库复制到自己账号形成一个副本，你可以对这个副本执行任意操作而不影响原始项目，如果你更新了仓库里的资料，可以使用pull request申请合并，请求得到同意后你的修改将出现在原始项目中。
 
-'''math
+$$e=\lim_{x\rightarrow+\infty}\big(1+\frac{1}{x}\big)^x$$
 
-e=\lim_{x\rightarrow+\infty}\big(1+\frac{1}{x}\big)^x
 
-'''
