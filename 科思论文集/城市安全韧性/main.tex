@@ -1,0 +1,682 @@
+\documentclass[conference]{IEEEtran}
+\pagestyle{plain}
+\IEEEoverridecommandlockouts
+\usepackage{graphicx} % Required for inserting images
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{subfigure}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{subcaption}
+
+\usepackage[T1]{fontenc}
+\usepackage{array}
+\usepackage{booktabs}
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+ 
+\makeatletter
+\newcommand{\linebreakand}{%
+  \end{@IEEEauthorhalign}
+  \hfill\mbox{}\par
+  \mbox{}\hfill\begin{@IEEEauthorhalign}
+}
+\makeatother
+
+\title{Technologies For Enhancing Urban Resilience Based on Machine and Deep Learning}
+
+\author{
+\IEEEauthorblockN{\textsuperscript{*}Nie Yanfeng}
+\IEEEauthorblockA{\textit{School of Future Technology}}\and
+\IEEEauthorblockN{\textsuperscript{*}Gong Yulin}
+\IEEEauthorblockA{\textit{School of Future Technology}}\and
+\IEEEauthorblockN{\textsuperscript{*}Zuo Hang}
+\IEEEauthorblockA{\textit{School of Future Technology}}\linebreakand
+\IEEEauthorblockN{\textsuperscript{*}Cheng Qian}
+\IEEEauthorblockA{\textit{School of Future Technology}}\and
+\IEEEauthorblockN{\textsuperscript{*}Jiang Sihang}
+\IEEEauthorblockA{\textit{School of Future Technology}}\and
+\IEEEauthorblockN{\textsuperscript{*}Li Lingjieling}
+\IEEEauthorblockA{\textit{School of Future Technology}}\and
+\IEEEauthorblockN{\textsuperscript{*}Yang Mohan}
+\IEEEauthorblockA{\textit{School of Future Technology}}\and
+{\footnotesize \textsuperscript{*}These authors contributed equally to this work.}
+}
+
+
+\begin{document}
+
+\IEEEtitleabstractindextext{%
+\begin{IEEEkeywords}
+urban resilience, machine learning, deep learning, ai-based methods, pangu-weather, bionic robots, remote sensing, city simulation
+\end{IEEEkeywords}
+
+\begin{abstract}
+By introducing the concept of urban resilience, we displayed AI-based methods, remote sensing and bionic robots used in improving urban resilience and their basic applications, within the chronological order. After that, we integrate them into a complicated circumstance and assume a hypothetical littoral city, viewing its response under a severe typhoon namely Haishen. Finally we deduce the conclusion that these technologies based on machine learning and deep learning greatly enhance the urban resilience, showing a birght prospect.
+\end{abstract}
+}
+
+\maketitle
+\thispagestyle{plain}
+\IEEEdisplaynontitleabstractindextext
+
+\begin{group}
+    \renewcommand\thefootnote{\fnsymbol{footnote}}
+    \footnotetext[1]{Corresponding author: Ouyang Min.}
+\end{group}
+
+%基本背景介绍
+\section{\textbf{Introduction}}
+\IEEEPARstart{T}{}he roles of cities in the global system have changed considerably as a result of the time-space compression made possible by new transportation, communication, and organizational technologies\cite{b1}. The 20\textsuperscript{th} National Congress of the Communist Party of China informed the more habitable, resilient and intelligent cities are ought to be designed and developed nationwide in China\cite{b2}, which had arisen new demands for urban development. But Before discussing the present urban safety resilience strategies, we need to reflect on previous urbanization process in retrospect, along with the concept of urban resilience.
+
+\subsection{Urbanization From the 20th Century}
+In the process of the unprecedentedly rapid urbanization and globalization, a majority of population worldwide shifted their inhabitants from the rural area to the urban area. In the duration of this process, a tendency occurred that the most rapidly urbanizing cities are in the less-wealthy nations\cite{b3}. The evolution of these cities reflects changes in global and domestic political and economic fortunes in the 20th century\cite{b4,b5,b6}, along with the second industrial revolution. This wave of human migration during urbanization subsequently resulted in the centralization of population in major cities. Take the UK in 1900 as an example:\cite{b7}
+
+\begin{center}
+\begin{tabular}{lll}
+    \toprule
+    City & Population   \\
+    \midrule
+    London & 6,480,000\\
+    Manchester & 1,435,000\\
+    Birmingham & 1,248,000\\
+    Glasgow & 1,015,000\\
+    Liverpool & 940,000\\
+    Newcastle & 615,000\\
+    Leeds & 430,000\\
+    Sheffield & 402,000\\
+    Edinburgh & 400,000\\
+    \bottomrule
+\end{tabular}
+\end{center}
+
+The more urbanized, the more people will prefer to live in the city. Additionally, centralized population makes the people densities in the urban area much higher than the rural, which brings potential lethal risks than the average, rather natural or artificial. 
+
+\subsection{Natural Peril: The Dual Aspect of Urbanization}
+
+In fact, a great amount of disasters have happened in the duration of modern urbanization, especially in big cities. The Great Smog of London in 1952, caused by a combination of industrial pollution and high-pressure weather conditions, is estimated to have led to the deaths of 4,000 to 12,000 Londoners\cite{b8}. The Tangshan Earthquake in July 27, 1976, which nearly completely destroyed the city, caused a death toll of 242,769 with 164,851 injured in addition\cite{b9}. The seismic sea wave occurred in Indonesia in 2004 caused 238,945 dead or missing(According to the Ministry of Health in Indonesia). Lebanon floods in 2024 affected 1,000 people or so and disabled 8,000 ha agricultural land, causing over 100,000 Syrian refugees\cite{b10}. The safety and security of urban population is consistently threatened by the uncertainty from nature.
+
+Tellman underscore this issue with satellite imaging data revealing a significant increase in the proportion of the global population exposed to floods. This trend is paralleled by growing risks from other natural hazards, mandating a robust approach to urban resilience and crisis management.\cite{b17}.
+
+Tellman utilized daily satellite imagery at a 250-meter resolution to estimate flood extent and population exposure for 913 large flood events from 2000 to 2018. Their findings indicate a total inundation area of 2.23 million square kilometers, affecting 255–290 million people, which represents a 20 to 24 percent increase in the global population exposed to floods, a figure significantly higher than previous estimates, as shown in Fig.1. This underscores the urgency for urban planning that prioritizes resilience against natural hazards, including but not limited to floods.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\linewidth]{2E9376E0FD60704CD679100F325D1A9F.png}
+    \caption{\textbf{Summary statistics of the Global Flood Database (take flood as an example, manifesting the increasing risks of urban areas under natural disasters)}}
+    \label{fig:enter-label}
+\end{figure}
+
+In light of these challenges, urban resilience must be a cornerstone of city planning and policy. It involves the ability not only to withstand and recover from disasters but also to adapt to and mitigate their impacts over the long term. This requires a holistic approach that integrates scientific research, technological innovation, and community engagement to build cities that are better prepared for the inevitable onslaught of natural disasters.
+
+\subsection{Urban Resilience}
+The following paragraph gives out an integrative definition of urban resilience:
+
+Urban resilience refers to the ability of an urban system---and all its constituent socio-ecological and socio-technical networks across temporal and spatial scales---to maintain or rapidly return to desired functions in the face of a disturbance, to adapt to change, and to quickly transform systems that limit current or future adaptive capacity\cite{b11}. 
+
+Urban systems are conceptualized as complex, adaptive, emergent ecosystems composed of four subsystems—governance networks, networked material and energy flows, urban infrastructure and form, and socioeconomic dynamics—that themselves are multi-scalar, networked, and often strongly coupled\cite{b11}. Building resilient urban systems requires different degrees of alteration, thus “transitional” “incremental” or “transformational” changes may all be relevant\cite{b12,b13}.
+
+A critical feature of a resilient city is the speed of action and recovery. In the contemporary context, forecasting disasters and coping with new epochal circumstances add new challenges to the development of resilient cities. 
+
+To solidify the four basic pillars---resisting, recovering, adapting and transforming---of urban resilience\cite{b14}, a considerable amount of technologies were and are being used in the present days. The following passage introduces three types of technologies based on machine and deep learning, and display their applications in reality.
+
+\section{\textbf{Pangu-Weather In Cyclone Tracking---Before a Disaster}}
+\subsection{Deep Learning and Transformer}
+Deep learning has revolutionized the field of artificial intelligence (AI) by enabling machines to learn complex patterns from large amounts of data. At the heart of this revolution lies a family of algorithms known as deep learning, which involves artificial neural networks with multiple layers (Hinton et al., 2006)\cite{b58}. These layers, or "deep" architectures, allow the network to learn hierarchical representations of data, capturing both simple and high-level features (Le Cun et al., 2015)\cite{b59}.
+
+One of the most significant breakthroughs in deep learning is the introduction of the Transformer model, which has transformed the way we process sequential data, particularly in natural language processing (NLP) tasks. The Transformer, as introduced by Vaswani et al. (2017)\cite{b60}, relies entirely on attention mechanisms to draw global dependencies between input and output elements, eliminating the need for recurrence and convolutions.
+
+\subsubsection{The Rise of Deep Learning}
+Deep learning's roots can be traced back to the development of the perceptron in the 1950s (Rosenblatt, 1958)\cite{b61}. However, it wasn't until the 21st century, with advancements in computational power and the availability of large datasets, that deep learning truly took off. The introduction of deep belief networks and convolutional neural networks (LeCun et al., 1998)\cite{b62} laid the foundation for many of the techniques used today.
+
+Deep learning models are capable of learning representations at multiple levels of abstraction. For instance, in image recognition tasks, a deep neural network can learn to identify edges at the pixel level and gradually build up to recognizing complex shapes and objects (Krizhevsky et al., 2012)\cite{b63}. This hierarchical learning process is a key factor in the success of deep learning across various domains, including computer vision, speech recognition, and autonomous vehicles.
+
+\subsubsection{The Transformer Architecture}
+The Transformer is a pivotal model in the field of NLP. It is based solely on attention mechanisms, dispensing with recurrence and convolutions entirely. This allows for significantly more parallelization and faster training times compared to traditional sequence transduction models that rely on complex recurrent or convolutional neural networks.
+
+The core of the Transformer is the self-attention mechanism, which enables the model to weigh the relevance of different words in a sentence when predicting the next word. This is achieved through a process called "scaled dot-product attention," where the dot products of the queries with all keys are scaled by the square root of the dimension, and then a softmax function is applied to obtain the weights on the values.
+
+One of the significant advantages of the Transformer is its ability to handle variable-length sequences and its efficiency in parallel processing. Unlike recurrent neural networks (RNNs), which process input sequentially, the Transformer can process the entire sequence at once, leading to substantial speed improvements.
+
+Its architecture is shown in Fig.2.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\linewidth]{d923c6a6-224b-4e11-8766-8ae46b5c4bfe.png}
+    \caption{\textbf{The Transformer Architecture}}
+    \label{fig:enter-label}
+\end{figure}
+
+\subsubsection{Multi-Head Attention and Positional Encoding}
+To enhance the model's ability to capture different relationships within the data, the Transformer employs multi-head attention. This involves dividing the attention into multiple heads that learn complementary representations of the input sequence. Each head attends to different subspaces of the input at different positions, allowing the model to jointly process different aspects of the input data.
+
+Since the Transformer lacks recurrence and convolution, it introduces positional encoding to incorporate information about the sequence order. This is achieved through a fixed mathematical function that embeds each position in the sequence with a unique vector.
+
+\subsubsection{Impact and Applications}
+The Transformer's efficiency and effectiveness have led to its widespread adoption in various AI applications. It has become the backbone of numerous NLP tasks, including machine translation, text summarization, and question-answering systems. Its success has also spurred the development of variants and extensions, such as the BERT model (Devlin et al., 2018)\cite{b64}, which employs a Transformer encoder to create contextualized word embeddings.
+
+Moreover, the Transformer's architecture has been adapted for computer vision tasks, such as image classification and object detection, demonstrating its versatility beyond NLP (Dosovitskiy et al., 2020)\cite{b65}. This adaptability has positioned the Transformer as a fundamental tool in the AI toolkit, with potential applications in any domain involving sequential data processing.
+
+\subsubsection{Challenges and Future Directions}
+Despite its successes, the Transformer model faces challenges. One of the main concerns is its computational cost, particularly for training large models on massive datasets. Additionally, the model's ability to generalize to unseen data and its interpretability remain active areas of research.
+
+Future work in deep learning and Transformers will likely focus on enhancing model efficiency, improving generalization, and expanding their applicability to new domains. There is also a growing interest in combining symbolic reasoning with Transformer models to create more robust and explainable AI systems.
+
+In conclusion, deep learning, particularly with the advent of the Transformer model, has ushered in a new era of AI capabilities. Its ability to learn complex representations and handle sequential data has transformed various fields, from language to vision. As research progresses, we can expect further innovations that will continue to push the boundaries of what is possible with AI. The following Pangu-Weather is one that made the overturn in the field of weather forecast.
+
+\begin{figure*}[h]
+    \centering
+    \includegraphics[width=0.9\linewidth]{屏幕截图 2024-11-16 182658.png}
+    \caption{\textbf{3D Earth-specific transformer\textsuperscript{\cite{b15}}}}
+    \label{fig:enter-label}
+\end{figure*}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\linewidth]{屏幕截图 2024-11-16 184206.png}
+    \caption{\textbf{Hierarchical temporal aggregation}}
+    \label{fig:enter-label}
+\end{figure}
+
+\begin{figure*}[h]
+    \centering
+    \includegraphics[width=0.9\linewidth]{屏幕截图 2024-11-20 214255.png}
+    \caption{\textbf{Pangu-Weather is more accurate at early-stage cyclone tracking than ECMWF-HRES.}}
+    \includegraphics[width=0.9\linewidth]{111.png}
+    \caption{\textbf{Forecast results of Pangu-Weather compared with the operational IPS and FourCastNet.}}
+    \label{fig:enter-label}
+\end{figure*}
+
+\subsection{Pangu-Weather Medium-Range Weather Forecast Model}
+With the unprecedentedly rapid development of deep learning, it has introduced a promising direction, where scientific community takes advantages of artificial intelligence(AI)-based methods. FourCastNet is a successful weather forecast model, and also the much more excellent Pangu-Weather. In the following subsections we are introducing the basic machanism of Pangu-Weather and its performance in forecasting extreme weather events compared with the operational IPS and FourCastNet\cite{b18}.
+\subsubsection{Mathematic settings and evaluation metrics}
+We denote all studied global weather varaibles at time $t$ as $\mathbf{A}_t$, a 3D matrix of size $N_{\mathrm{lon}}\times N_{\mathrm{lat}} \times 69$, where $N_{\mathrm{lon}}=1440$ and $N_{\mathrm{lat}}=721$ are the spatial resolution along the longitude and latitude axes\cite{b15}. The number of variables studied is $69$\cite{b15}. We say $\mathbf{A}_{t+\Delta t}$ is asked to be predicted by the trained model if for all $t\leq t_0$, $\mathbf{A}_t$ is available. The Pangu-Weather only uses $\mathbf{A}_{t_0}$, a independent time point, as input and predicted $\mathbf{A}_{t_0+\Delta t}$ as output, as a consequence of the  contemporarily limited GPU memory.
+
+In the demonstration of Pangu-Weather, according to the original paper, we introduce two evaluation metrics: RMSE and ACC.
+    \begin{align*}
+        &\mathbf{RMSE}(v,t)=\sqrt{\frac{\sum_{i,j} L(i)(\hat{\mathbf{A}}_{i,j,t}^v-\mathbf{A}_{i,j,t}^v)^2}{N_{\mathrm{lat}}\times N_{\mathrm{lon}}}} \\
+        &\mathbf{ACC}(v,t)=\sqrt{\frac{\sum_{i,j} L(i)\hat{\mathbf{A'}}_{i,j,t}^v \mathbf{A'}_{i,j,t}^{v}}{\sum_{i,j} L(i)(\hat{\mathbf{A'}}_{i,j,t}^v)^2 \times \sum_{i,j} (\mathbf{A'}_{i,j,t}^{v})^2}}
+    \end{align*}
+Here $\sum_{i,j}$ is equivalent to $\sum_{i=1}^{N_{\mathrm{lat}}}\sum_{j=1}^{N_{\mathrm{lon}}}$. Additionally, $v$ is any weather variable, $\mathbf{A}_{i,j,t}^v$ is a scalar that represents the value $v$ at time $t$ and horizontal coordinate $(i,j)$. $L(i)=N_{\mathrm{lat}}\times \frac{\cos\phi_i}{\sum_{i=1}^{N_{\mathrm{lat}}}{\cos{\phi_{i'}}}}$ is the weight at latitude $\phi_i$. $\mathrm{A}'$ denotes the difference between $\mathrm{A}$ and the climatology, that is, the long-term mean of weather states that are estimated on the training data over 39 years\cite{b15}.
+
+In the training process, $\mathbf{RMSE}$(the lower, the better) and $\mathbf{ACC}$(the higher, the better) showed their irreplaceable characteristics in evaluating the performance of model.
+\subsubsection{Ensemble forecast metrics}
+The unprecedentedly fast training and forecasting speed of Pangu-Weather offers itself the opportunity for performing large-member ensemble forecasts with small computational costs. By following a recent work\cite{b16}, developers of Pangu-Weather aims to compute two metrics for ensemble weather forecast, which are named as $\mathbf{CRPS}$(continuous ranked probability score) and $\mathbf{SSR}$(spread-skill ratio). Mathematically, $\mathbf{CRPS}$ is defined as:
+    \begin{equation}
+        \nonumber
+        \mathbf{CRPS}=\int_{-\infty}^{+\infty}[F(\hat{\mathbf{A}}_{i,j,t}^v)-\mathbb{I}(\mathbf{A}_{i,j,t}^v\leq z)]\mathrm{d}z
+    \end{equation}
+where $F(\cdot)$ denotes the cumulative distribution function of the forecast distribution and $\mathbb{I}(\cdot)$ is an indicator function that takes a value of 1 if the statement is true and 0 otherwise.
+
+
+
+$\mathbf{SSR}$ is obtained by dividing 'spread' by $\mathbf{RMSE}$ with spread being:
+    \begin{equation}
+        \nonumber
+        \mathbf{Spread}(v, t)=\sqrt{\frac{\sum_{i,j}L(i)\cdot  \mathrm{var}(\hat{\mathbf{A}}_{i,j,t}^v)}{N_{\mathrm{lat}}\times N_{\mathrm{lon}}}}
+    \end{equation}
+Here $\sum_{i, j}$ is defined as above and $\mathrm{var}(\cdot)$ indicates the variance in the ensemble dimension. And $\mathbf{SSR}$=1.0 means the ensemble is perfectly reliable. 
+
+By applying ensemble forecast, Pangu-Weather can display the improvement of performances on A.I.-based forecast methods.
+\subsubsection{3D Earth-specific transformer (3DEST)}
+
+Basically, Pangu-Weather uses a three-dimension (3D) neural network to perform weather forecast. The methodology involves training deep neural network to take reanalysis weather data at a given point in time as input, and the produce reanalysis weather data at a future point in time as output.
+
+The architecture of 3DEST is shown in Fig.3. The data fed into the 3DEST are propagated through an encoder-decoder architecture derived from the Swin transformer, a variant of transformer, which has 16 blocks.
+
+The traditional neural network usually possesses two dimensions(or axis) to process the input data, while the 3DEST possesses three dimensions to train the model. The future work, according to \cite{b15}, may involve training four-dimension neural network, introducing the axis of time.
+
+\subsubsection{Hierarchical temporal aggregation strategy}
+To reduce cumulative forecast errors, Pangu-Weather uses an algorithm strategy, namely the hierarchical temporal aggregation, a greedy algorithm, to split the lead time into numbers of basic time periods(being 1h, 3h, 6h, or 24h), always calling the largest affordable lead time. This efficiently reduces the iterations required.
+
+As shown in Fig.4, when the lead time is 56h, Pangu-Weather would execute the 24-hour model twice, the 6-hour model once, and the 1-hour model once, which is faster and more accurate compared with FourCastNet\cite{b18}.
+
+\subsubsection{Comparison with the operational IPS and FourCastNet}
+In the present days, the most popular medium weather forecast method, and also the most accurate forecast system before Pangu-Weather, is the numerical weather prediction(NWP) method. In the past decade, high-performance computing systems have greatly accelerated research in the field of numerical weather prediction (NWP) methods\cite{b19}. Conventional NWP methods are primarily concerned with describing the transitions between discretized grids of atmospheric states using partial differential equations (PDEs) and then solving them with numerical simulations\cite{b20,b21,b22}. Despite the accuracy, these numerical methods are often slow, taking a great amount of computational costs, and additionally, the forecast error would be introduced by approximations.
+
+The NWP forecast reports used in the comparison with Pangu-Weather is from  the operational integrated forecasting system (IFS) of the European Centre for Medium-Range Weather Forecasts (ECMWF)\cite{b23}.
+
+In the comparison experiment, the test data is the ERA5 data\cite{b24} in 2018, which is considered to be the most accurate weather data from 1979 to nowadays. The trainings on both FourCastNet and Pangu-Weather are validated on 2019 ERA5 data. And the following is the results of comparisons between the operational IPS, FourCastNet and Pangu-Weather.
+
+\textbf{Tracking tropical cyclones}. By setting the lead time of Pangu-Weather to 6 hours, \cite{b15} compared Pangu-Weather with ECMWF-HRES, a strong cyclone tracking method based on high-resolution (9km × 9km) operational weather forecasting. As shown in Fig.4, Pangu-Weather statistically produced more accurate tracking results than ECMWF-HRES for these cyclones. The 3-day and 5-day mean direct position errors for cyclone eyes were reported at 120.29km and 195.65km for Pangu-Weather, which are smaller than 162.28km and 272.10km for ECMWF-HRES, respectively.
+
+For \textbf{a,b.} in Fig.5, Tracking results for two strong tropical cyclones in 2018, that is, Typhoon Kong-rey (2018–25) and Yutu (2018–26). The initial time point is shown below each panel. The time gap between neighbouring dots is 6h. Pangu-Weather forecasts the correct path of Yutu (that is, it goes to the Philippines) at 12:00UTC on 23 October 2018, whereas ECMWF-HRES obtains the same conclusion 2days later, before which it predicts that Yutu will make a big turn to the northeast. \textbf{c.} in Fig.5 is the comparison between Pangu-Weather and ECMWF-HRES in terms of mean direct position error over 88 cyclones in 2018. Each number in brackets in the x-axis indicates the number of samples used to calculate the average. 
+
+For $\mathbf{ACC}$ and $\mathbf{RMSE}$, Pangu-Weather displays a better performance than the operational IPS and FourCastNet. The extended data is provided in Fig.6. The strings above each figure denotes the devices used to train and predict the weather, such as Z500, Q500, etc. However, one thing we should notice is that the direct comparison between Pangu-Weather and ECMWF-HRES is somewhat unfair, because ECMWF-HRES used the IFS initial condition data as its input, whereas Pangu-Weather used reanalysis data. Despite these factors, Pangu-Weather can be considered as a huge breakthrough in medium-range weather forecast.
+
+\subsection{Paradigm in Meteorological Forecast of Pangu-Weather}
+\subsubsection{Typhoon Mawar---Genesis and Path Characteristics}
+Tropical Storm "Mava" emerged on May 20th, 2023, in the Northwest Pacific, marking an unusual event in the early season\cite{b55}.This storm intensified rapidly, reaching super typhoon status with sustained winds of over 68 meters per second and a minimum central pressure of 905 hPa by May 26th. Its trajectory was characterized by an initial north-northwest movement, followed by a significant westward turn, which is atypical for storms of its kind\cite{b56}."Mava" approached Guam in the United States, and later, shifted towards the east coast of Taiwan, posing a potential threat to the region. The storm's intensity and longevity are remarkable, with an expected life span of around 15 days and a week-long period of maintaining super typhoon status. "Mava" exhibited characteristics such as oceanic genesis at a distance, rapid intensity development, a long lifespan, prolonged high-intensity maintenance, and slow movement.
+
+Typically, typhoons that form at 150 degrees east longitude in May have an almost zero probability of affecting China. However, Mava's trajectory suggested that it might come very close to China's coastal areas, with the possibility of making landfall not ruled out\cite{b57}.Moreover, Mava's intensity escalated from a strong tropical storm to a super typhoon in just three days, with the maximum wind speed near the center reaching 68 meters per second, making it the "king of wind" globally for 2023. 
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\linewidth]{3EB6E502712F5B07C2996F72CC558B7B.png}
+    \caption{\textbf{The track chart of Typhoon Mawar, along with its significant track turning points}}
+    \label{fig:enter-label}
+\end{figure}
+
+\subsubsection{The Art of Trajectory Reversal Forecasting}
+In the path forecasting of Typhoon "Mava," the Pangu-Weather demonstrated excellent performance, predicting five days in advance that it would turn in the eastern waters of Taiwan. Pangu model was the first model to predict the turning point of Mava’s track, much earlier than other models in Europe. 
+
+"Mava" had a widespread impact, with its strong winds and heavy rains bringing severe weather conditions to the areas it passed through, particularly causing significant damage to Guam. According to the National Oceanic and Atmospheric Administration of the United States, the economic loss caused by "Mava" to the U.S. amounted to 4.3 billion U.S. dollars. In China, the Fujian Provincial Flood Control Headquarters convened relevant departments to discuss the development trend of "Mava" and arranged for defense work to minimize the potential damage that the typhoon might bring. Without a precise prediction, we might have even more terrible economic loss. However, Pangu model’s great performance can give us a guide when we encounter storms next time, being able to take proper measures to protect people.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\linewidth]{图片2.png}
+    \caption{\textbf{On May 24, 2023, a summary of the trajectory forecasts for Typhoon Mawar from various meteorological prediction platforms. It showed that some forecast models did not rule out the possibility of Mawar making landfall in China, among which the Pangu model was the earliest to make the correct prediction}}
+    \label{fig:enter-label}
+\end{figure}
+\begin{figure*}[h]
+    \centering
+    \includegraphics[width=1\linewidth]{图片3.png}
+    \caption{\textbf{The Pangu-Weather has demonstrated remarkable success in predicting the paths of typhoons, including typhoons Kong-Rey and Yutu. In these cases, the predicted paths by the Pangu model were almost identical to the actual paths, outperforming other models which still exhibited certain deviations.}}
+    \label{fig:enter-label}
+\end{figure*}
+\subsubsection{Protective Tool: Faster, More Accurate, More Practical}
+This forecast not only showcased the Pangu model's accuracy and foresight in predicting the paths of extreme weather events but also, compared to other models, the Pangu model's prediction speed was increased by more than 10,000 times, capable of providing global meteorological forecasts at a second-level resolution.
+
+Statistical analysis has shown that the deviation rate of Pangu's typhoon path prediction is a mere 1\%, an accuracy that is unparalleled among other meteorological models worldwide. In other typhoon predictions, the Pangu model has similarly demonstrated an extremely high degree of precision, with its predicted paths almost coinciding with the actual paths of the typhoons. This level of accuracy is crucial for regions affected by typhoons to take necessary protective measures in advance.
+
+Typhoons, as highly destructive meteorological disasters, often necessitate preemptive protective measures, for which reliable path predictions serve as a crucial criterion for timely action. If the predicted path deviates significantly, it can lead to unnecessary protective measures in cities that the typhoon is not actually projected to pass through, thereby disrupting the normal order of local life. Conversely, cities that the typhoon does pass through but were not anticipated may suffer greater impacts and damage due to the lack of timely protective measures, resulting in a double negative effect. The advent of the Pangu model provides us with a reliable benchmark. As the Pangu-Weather continues to be refined in the future, a mass majority of people can be prepared to confront every typhoon invasion effectively.
+
+\section{\textbf{Remote Sensing in Urban Disaster Prevention---During the Disaster}}
+\subsection{Application of Remote Sensing Technology in Urban Disaster Prevention}
+\subsubsection{Brief introduction---Urban disasters and remote sensing technology}
+With the acceleration of urbanization, the prevention and management of urban disasters have become increasingly important. Remote sensing technology, as an effective monitoring tool, provides a new perspective for urban disaster prevention. The aim of this paper is to explore the application of remote sensing technology in monitoring and preventing urban disasters, including floods, earthquakes, landslides and urban heat island effect. By analyzing remote sensing data, disaster risk areas can be identified in advance, disaster impacts can be assessed, and appropriate preventive measures can be developed. 
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\linewidth]{rs1.jpg}
+    \caption{\textbf{Schematic diagram of single electron lidar}}
+    \label{fig:enter-label}
+\end{figure}
+
+Urban disasters include all kinds of catastrophic events that occur in urban areas and cause damage to and impact on human life, property, social order and the environment. It includes meteorological disasters (e.g., heavy rain, lightning, drought, etc.), oceanic disasters (e.g., tsunamis, storm surges, etc.), flooding disasters, geological and seismic disasters (e.g., ground subsidence, earthquakes, etc.), biological disasters of crops and forests, and astronomical disasters (e.g., meteorite rain). There are also human disasters such as wars, fires, chemical disasters, traffic accidents, epidemics, and so on. Urban disasters are not only diverse, but also have a very strong chain, once a disaster occurs, it will trigger a series of serious hazards, which will cause great damage to the population and society. With the acceleration of China's urbanization, the response to urban disasters has become more and more important. 
+
+\begin{figure}[h]
+    \centering
+    \begin{minipage}{0.49\linewidth}
+        \centering
+        \includegraphics[width=0.9\linewidth]{rs4.jpg}
+        \caption{\textbf{Tianjin explosion}}
+        \label{a}
+    \end{minipage}
+    %\qquad
+    \begin{minipage}{0.49\linewidth}
+        \centering
+        \includegraphics[width=0.9\linewidth]{rs2.jpg}
+        \caption{\textbf{Wenchuan mudslide}}
+        \label{b}
+    \end{minipage}
+    \begin{minipage}{0.8\linewidth}
+        \centering
+        \includegraphics[width=0.9\linewidth]{rs3.jpg}
+        \caption{\textbf{Atacama desert}}
+        \label{c}
+    \end{minipage}
+    \label{fig:enter-label}
+\end{figure}
+
+Remote sensing technology, broadly defined as a method of obtaining information about the state of a target without direct contact with the target generally refers to a technical method of collecting information about a feature by recording the electromagnetic waves reflected from the feature through sensors mounted on platforms of varying altitudes, such as artificial satellites, airplanes, and unmanned aerial vehicles (UAVs). It involves the process of using some kind of device (remote sensor) placed on the carrying vehicle (platform) to sense the characteristic information of the target (generally the reflected or emitted radiation of electromagnetic waves) without directly contacting the target under study, and then transmitting, processing, and extracting from it the information of interest. 
+
+\subsubsection{The Principle and Development of Remote Sensing Technology}
+
+The basic principle of remote sensing technology; all things, due to their different types and environmental conditions, and thus have the characteristics of reflecting and radiating electromagnetic waves of different wavelengths. Remote sensing technology can detect the wavelengths of ultraviolet, visible light, infrared and microwave. The sun, as a source of electromagnetic wave emission, emits light that is also an electromagnetic wave. When sunlight passes through the universe and the atmosphere and reaches the Earth's surface, objects on the ground reflect or radiate these electromagnetic waves. Remote sensing technology makes use of these characteristics by capturing these reflected or radiated electromagnetic waves through sensors, and then analyzing and identifying the characteristics of objects on the ground. Remote sensing data is an analog or digital record of the electromagnetic wave energy reflected or emitted by a surface object and is associated with specific electromagnetic bands (visible light, infrared, microwave). Remote sensing is characterized by macroscopic, objective, real-time, dynamic and rapid characteristics, so through remote sensing technology we can monitor ground activities in real time and accurately, and can effectively prevent and respond to urban disasters. 
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\linewidth]{rs5.png}
+    \caption{\textbf{SAR technology monitoring surface deformation}}
+    \label{fig:enter-label}
+\end{figure}
+
+Remote sensing technology, as an important technology to cope with urban disasters, has become an increasingly important role in the continuous progress and development of remote sensing technology, the development of remote sensing technology has gone through many stages, and with the progress of science and technology, the scope of its application and the level of technology are constantly expanding and improving The early development of remote sensing technology can be traced back to the World War II period, when  microwave radar and infrared technology began to be used in military reconnaissance, extending the electromagnetic spectrum of remote sensing detection\cite{b66}. Remote sensing detection of the electromagnetic spectrum, 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\linewidth]{rs7.png}
+    \caption{\textbf{Electromagnetic Interference Effect of Continuous Waves on LiDAR from\cite{b66}}}
+    \label{fig:enter-label}
+\end{figure}
+ such as CHEN Shengzhe and CHEN Biao et al.\cite{b67} from the infrared night vision, infrared guidance and infrared stealth described the importance and prospects of infrared technology for the military, the 1990s, the radar technology and SAR data geophysical parameters of the inversion of the progress of modeling technology,  LI Zhiwei et al.\cite{b68} mathematically explain the principle of the D-InSAR and MT-InSAR, and the principle of the D-InSAR and the MT-InSAR. Zhiwei et al. mathematically explained the principle of D-InSAR and the progress of MT-InSAR, and carried out the parameter inversion of seismic source, volcanic activity, underground hydrology and so on. In the 21st century, remote sensing technology shows the new features of high 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\linewidth]{rs6.png}
+    \caption{\textbf{Schematic diagram of the application of InSAR technology in landslide disasters.}}
+    \label{fig:enter-label}
+\end{figure}
+spatial resolution, high spectral resolution, high time resolution, and opens up more new fields of application. At this stage, remote sensing technology not only receives the natural light reflected from the ground, but also receives the long-wave infrared radiation emitted from the ground. Ma et al.\cite{b69} use Synthetic aperture radar (SAR) and laser radar (LIDAR) active emission of electromagnetic waves, to achieve all-weather observation of the ground, to test the safety and reliability of LIDAR in the continuous wave electromagnetic environment, with a single line of off-axis LIDAR as the test object, carried out a test of electromagnetic interference effects of LIDAR under the action of continuous waves. Finally, the reasons for the interference of the lidar are analyzed, which provides a basis for the improvement of the lidar and its adaptability to the electromagnetic environment. Remote sensing technology has been widely used in geology, geography, oceanography, hydrology, meteorology and other fields.
+
+\subsubsection{Multiple capabilities of remote sensing technology in urban disaster response}
+Remote sensing technology has the ability to improve disaster monitoring and early warning, and can provide large-scale and high-frequency monitoring data, which is crucial for timely detection of disaster signs and early warning.  For example, small deformation of the ground surface can be monitored by InSAR technology, which is important for early warning of landslides, earthquakes and other geologic disasters Li et al.\cite{b70} In view of the limitations of the InSAR technology system, the characteristics of the landslide disaster, analyze the geometric aberrations, dense vegetation cover, atmospheric interference, three-dimensional deformation information acquisition, accuracy assessment, landslide deformation complexity and nonlinearities in the monitoring of landslides by InSAR. deformation complexity and nonlinearity, and provides feasible solutions and proposed measures to solve the corresponding problems; based on the perspective of the construction of InSAR landslide industry system, combining with artificial intelligence (AI), machine learning, UAV remote sensing, and seismic networks in the field of geosciences and other observation technologies, we summarize and prospect the future research on the application of InSAR in landslides from the perspective of data processing, and the fusion of the new technology with other new technologies. Outlook. In addition, multi-source SAR data can be used for the study of permafrost freezing and thawing processes in the Tibetan Plateau, which is important for understanding the impact of climate change on disasters.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\linewidth]{rs8.png}
+    \caption{\textbf{Distinguishing collapsed buildings from tilted ones through SVM}}
+    \label{fig:enter-label}
+\end{figure}
+
+Remote sensing technology can also be used for rapid assessment after disasters by analyzing remote sensing images to estimate the damage caused by disasters. For example, PolSAR image texture feature analysis is used to extract collapsed buildings, and fully polarized SAR images are used for seismic landslide census. In Zhai wei et al.'s study\cite{b71}, collapsed and tilted buildings based on the grey-level covariance matrix (GLCM) can be well distinguished from collapsed and tilted buildings by their differences in the four texture parameters: mean, homogeneity, entropy, and correlation. and leaning buildings. 
+
+The application of remote sensing technology in disaster risk management is expanding, including disaster risk assessment and the development of mitigation measures. By analyzing remote sensing data, potential disaster risk areas can be identified so that preventive measures can be taken. Enhancing the efficiency of emergency response After a disaster, remote sensing technology can quickly provide image information of the disaster area to support emergency response and rescue operations. For example, drone imagery was used for quantitative assessment of building damage in the Jiuzhaigou earthquake\cite{b72}, which helped to quickly assess the disaster situation and guide the allocation of rescue resources.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\linewidth]{rs9.png}
+    \caption{\textbf{Drone images used in the Jiuzhaigou earthquake area.}}
+    \label{fig:enter-label}
+\end{figure}
+
+\subsection{Practical Application of remote sensing technology in landslide}
+\subsubsection{Basic Information of Wulong County, Chongqing}
+Wulong county is a typical karst region, This region is prone and frequent to landslides disasters. Shuhui Jiang et al. \cite{b73}Topographically, in Wulong County, the river valleys are low mountain and hilly, while low and middle mountain zones occupy the northern and southern sectors. The county's terrain is highly intricate, with mountains undulating and slopes being precipitous. Owing to the continuous uplift of the Qinghai-Tibet Plateau, the internal and external geodynamic forces within the crust of this area are exceedingly vigorous. Moreover, the rivers and streams in Wulong County are deeply entrenched, featuring steep slopes and profound valleys, and the geological structure is elaborate. The weak strata and feeble structures on the surface are abundantly developed, furnishing the most conducive internal circumstances for the occurrence of super-large geological disasters, endowing the geological disasters in this area with characteristics such as a large number of occurrence points, extensive distribution, and significant perniciousness.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\linewidth]{rs10.png}
+    \caption{\textbf{Three-Dimensional Image Map of Wulong County, Chongqing City}}
+    \label{fig:enter-label}
+\end{figure}
+\subsubsection{TM Remote Sensing Images and Their Calibration and Enhancement}
+This thesis sums up results of previous studies based on the experience and research of TM remote sensing images, aerial image data, regional 1:50,000 topographic maps, and status of the second land use survey map for the study of such basic data, through remote sensing image processing and other data analysis, Wulong County landslide points of remote sensing interpretation. Remote sensing interpretation of the results points to landslide investigation validated and conforms to the actual situation in Wulong County. Remote sensing images and related information are based on information extracted from the terrain, combined with study area, topography, lithology, geological structure, rivers, human activity, rainfall, vegetation, and other factors affecting landslide, using the analytic hierarchy process, fuzzy mathematics methods The  study area landslides and landslide hazard assessment survey did in-depth discussion, the geological hazard is divided into five.
+
+By referring to the spectral information of each band of the TM image , diverse band combinations are chosen. V.Singhroy.Sar et al.\cite{b74} Subsequently, with the aid of a computer, mathematical operations are carried out on the digital image in accordance with a particular mathematical model. In other words, the computer processes this digital image using specific image processing functions, aiming to enhance and accentuate the information regarding geological disasters and their associated environmental geology.
+
+\textbf{Calculate the correlation coefficient between bands.} The correlation coefficient between bands: $R=\frac{S_{12}^2}{S_1*S_2}$ where $i, j$ represent the band numbers; $S_{12}$ is the covariance between the i\textsuperscript{th} band and the j\textsuperscript{th} band; $\mathrm{X}_k$ is the gray value of the k\textsuperscript{th} pixel in the i\textsuperscript{th} band; $\mathrm{X̅}^-$ is the spectral gray mean value of the i\textsuperscript{th} band; $\mathrm{Y}_k$ is the gray value of the k\textsuperscript{th} pixel in the j\textsuperscript{th} band; $\overline{\mathrm{Y}}$ is the spectral gray mean value of the j\textsuperscript{th} band; $n$ is the number of pixels in the sample area. 
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\linewidth]{rs11.png}
+    \caption{\textbf{Orthorectification of Some Key Areas}}
+    \label{fig:enter-label}
+\end{figure}
+
+Meanwhile, this research adopts the HIS (Hue, Intensity, Saturation) transformation method for remote sensing image fusion. The brightness, hue, and saturation of the images are separated, and the entire image transformation is based on the brightness channel, while the hue and saturation remain unchanged. This fully exploits the respective advantages of TM remote-sensing images and aerial photographs\cite{b75}. The fused image basically retains the multi-spectral information of TM and also has the high spatial resolution of aerial photographs. In this way, the geomorphic information of different colors can be clearly distinguished, and the geological disaster information required for this work can be extracted to the greatest extent.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\linewidth]{rs12.png}
+    \quad
+    \includegraphics[width=1\linewidth]{图片7.png}
+    \caption{\textbf{The image after the fusion of aerial photos and satellite images.}}
+    \label{fig:enter-label}
+\end{figure}
+
+\subsubsection{Machine Learning for Interpretation and Hazard Assessment of Remote Sensing Images}
+For the enhanced images obtained, we can carry out the following processing:
+
+\textbf{1.Human-computer Interactive Interpretation:} Interpret the remote sensing images on the screen, or conduct supplementary and revision work on the basis of computer-supervised classification processing, and integrate the interpretation results onto the corresponding layers. Since the information and information levels displayed on the computer screen of the remote sensing images are richer than those in the corresponding remote sensing pictures, the interpretation effect of the human-computer interactive method is better than that of visual interpretation. In addition, because the mapping is directly done on the computer, the mapping compilation procedures are thus reduced\cite{b76}, as shown in Fig.30.
+
+\begin{figure}[h]
+    \centering
+    \begin{minipage}{0.49\linewidth}
+        \centering
+        \includegraphics[width=0.9\linewidth]{rs13.png}
+        \label{a}
+    \end{minipage}
+    %\qquad
+    \begin{minipage}{0.49\linewidth}
+        \centering
+        \includegraphics[width=0.9\linewidth]{rs14.png}
+        \label{b}
+    \end{minipage}
+    \caption{\textbf{Remote Sensing Interpretation Signs of Landslides in the Research Area}}
+\end{figure}
+
+\textbf{2.The assessment of regional geological disaster hazards} is predicated upon the extensive collection and comprehensive analytical processing of the relationship between geological disasters and the factors contributing to their development. Through the application of GIS platforms and associated technologies, a suitable mathematical evaluation model is formulated to compute the hazard levels of each evaluation unit\cite{b77}. Subsequently, the corresponding hazard grades are demarcated, thereby facilitating the further analysis of the regional geological disaster hazard zoning. 
+
+\textbf{3.The Analytic Hierarchy Process (AHP)} is used to establish a landslide hazard assessment model\cite{b78}. This method is a hierarchical weight decision analysis approach proposed by Saaty, a professor at the University of Pittsburgh and an American operations researcher. It analyzes the essence, influencing factors, and internal relationships of complex problems and serves as a model and method for making decisions regarding complex systems that are difficult to express quantitatively. This method is applicable to making decisions on complex decision-making problems where sufficient quantitative information is lacking. Landslide hazard assessment is a complex decision-making issue, and the various influencing factors involved in the assessment are difficult to express quantitatively. Therefore, applying the Analytic Hierarchy Process to landslide hazard assessment can overcome objectively existing problems and achieve better results. 
+
+\section{\textbf{Bionic Robots in Disaster Relief---After the Disaster}}
+\subsection{The Significance of Robots in Disaster Relief}
+After a disaster, the top priority of rescue missions is to quickly rescue survivors and provide necessary medical assistance. Practical experience has shown that if assistance is not received within 48 hours after a disaster, the survival rate of trapped individuals will significantly decrease\cite{b25}. However, building collapses can create many narrow spaces, making it difficult for rescue personnel and even search dogs to enter and search. In addition, disasters can cause drastic changes in the surrounding environment and may be accompanied by various secondary disasters, putting rescue personnel at risk of high temperatures, toxic and harmful, radioactive environments, and the danger of secondary collapses. Some disasters, such as earthquakes, if not promptly relieved, may also affect surrounding areas, causing more serious consequences\cite{b26}. Robots have strong load-bearing capabilities and good adaptability to complex post-disaster environments, and can carry a variety of sensors to help rescue personnel obtain on-site conditions and locate survivors at the earliest time\cite{b27}.
+
+\subsection{Problems with Traditional Robots and the Advantages of Bionic Robots}
+Traditional search and rescue robots are mostly tracked or wheeled. Tracked robots have good terrain adaptability but are too large and inflexible, with limited detection capabilities in narrow spaces; while wheeled robots are smaller and more flexible, but structurally more complex and have poor obstacle surmounting capabilities\cite{b28}.
+
+Bionic robots combine superior structures and physical characteristics from biological systems with robotic technology\cite{b29}. By imitating nature's creatures, bionic robots have superior performance compared to traditional search and rescue robots, including higher flexibility, better environmental adaptability, and outstanding task execution capabilities. The use of autonomous intelligent bionic robots in disaster search and rescue missions has become an emerging and challenging field in robotics\cite{b30}.
+
+\subsection{Introduction to Bionic Robots}
+Based on the choice of bionic prototypes, existing bionic robots can mainly be divided into legged robots, snake robots, flying robots, and amphibious robots, among other types. In addition, there are swarm robots controlled by algorithms to aggregate multiple individuals. These robots achieve various functions through animal bionics and have strong adaptability to specific terrains, playing different roles in rescue missions, while also having their shortcomings.
+\subsubsection{Legged Robots}
+Legged robots, inspired by animals that move on legs such as dogs, cheetahs, and spiders, can adjust their gait to adapt to various rugged terrains, allowing them to traverse rocky beaches, jungles, and climb steep slopes. Compared to traditional wheeled or tracked robots, legged robots have greater degrees of freedom and the ability to adapt to non-structured terrains\cite{b31}. Xiao Xiongliang et al.\cite{b32}, in response to the difficulties and high risks of manual rescue in non-structured environments in coal mines, proposed a hydraulic-driven wheel-legged coal mine rescue robot. The robot consists of a main body and a wheel-leg mechanism, which can swing around a fixed pivot under the action of a swinging motor, controlling the swinging motion of the robot's four swinging arms, achieving attitude adjustment of the robot, and high adaptability to coal mine terrain. BAI et al. \cite{b33} designed a transformable wheel-legged robot named "Land Devil Ray". Inspired by the movement of insects and arthropods, the robot uses a multi-link structure and can transform from a circular wheeled mobility mode to a wheel-legged mobility mode in different terrains to adapt to various terrains. YANG et al. \cite{b34} inspired by hexapod insects designed a highly mobile crawling robot HIbot, which is lightweight and has only one driving motor with a weight of about 440g, without control components. The robot can crawl in various outdoor environments such as gravel and grass, and has the advantages of being light, low-cost, highly mobile, and reliable in search and rescue missions.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\linewidth]{Legged3.jpg}
+    \caption{\textbf{A legged robot prototype}}
+    \label{fig:enter-label}
+\end{figure}
+
+In mountainous and canyon terrains, robots that use jumping movements have an advantage in obstacle surmounting. Animals in nature that use jumping as a mobility strategy can jump over obstacles several times larger than themselves and agilely evade predators. By jumping, robots can enhance their flexibility in specific unstructured environments. ZHANG et al. \cite{b35} mimicked the jumping movements of kangaroos to design and optimize a bionic robot Zbot, which uses a gear five-bar linkage to decouple the robot's knee and ankle joints, has jumping capabilities and adapts to complex terrains, and like kangaroos, can effectively absorb landing buffer energy and release part of the energy in the next jump, achieving repeated use of energy, and can play a role in tasks such as wild searches and life rescue.
+
+Fig.23 provides a prototype of legged robot.
+
+\subsubsection{Snake Robots}
+Snakes, earthworms, inchworms, and other crawling animals have excellent mobility in various environments\cite{b36}, able to pass through narrow passages and climb various rugged terrains. Snake robots, prototyped after these animals, are usually modularly designed with high degrees of freedom and do not require wheels or legs. Snake robots can move in the narrow gaps formed by collapsed buildings, with high stability and good mobility. Li Yi et al.\cite{b37}, by combining the limited space environment after disasters and the characteristics of biological movement in soil, designed a bionic earthworm robot, and through simulation analysis and trajectory planning, achieved functional bionics of earthworm movement, which can play a role in rescuing buried personnel in rescue mines.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\linewidth]{snake1jpg.jpg}
+    \caption{\textbf{A snake robot prototype}}
+    \label{fig:enter-label}
+\end{figure}
+
+SAHU et al.\cite{b38} proposed a multi-joint snake robot Polybot G1v4, which uses a new gait and has flexibility, modularity, and a highly adjustable body structure. This robot can climb multiple steps at the same time and perform search and rescue operations in dangerous environments, narrow spaces, and uneven terrains. ULLAH et al.\cite{b39} designed an autonomous snake robot for urban search and rescue tasks that can navigate in unknown environments and generate 3D maps, planning obstacle-avoiding paths without prior environmental knowledge, and can be applied to tasks such as locating trapped individuals, providing life-saving drugs and food, and assessing structural damage.
+
+Fig.24 provides an example of snake robot prototype.
+
+\subsubsection{Aerial Robots}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\linewidth]{Aerial2.jpg}
+    \caption{\textbf{An aerial robot prototype}}
+    \label{fig:enter-label}
+\end{figure}
+Inspired by the flight capabilities of birds, aerial robots are agile and fast, able to fly to places that are difficult for rescue personnel to reach, assisting them in understanding situations that cannot be directly seen with the naked eye \cite{b40}. Although the application of aerial robots in search and rescue scenarios is still in the research and development stage, there are already some related research and conceptual designs. MAHJOUBI et al.\cite{b41}, inspired by hummingbirds, designed a biomimetic flapping-wing micro air vehicle (MAV) and proposed a control strategy based on the mechanical impedance characteristics of the wing joints to efficiently generate lift and thrust. This vehicle has potential application value in reconnaissance, surveillance, search and rescue, and mapping. DUBA et al.\cite{b42}, inspired by birds, designed and developed a micro autonomous aerial vehicle (MAV) with two flapping wings and a supporting chassis. This vehicle achieves autonomous navigation through the use of the Pixhawk flight controller and has excellent maneuverability and rapid response time in search and rescue missions.
+
+Fig.25 provides an example of aerial robots.
+
+
+\subsubsection{Amphibious Robots}
+Amphibious robots, prototyped after various amphibious animals, possess the ability to work both underwater and on land, adapting to environments such as beaches, mudflats, wetlands, and other similar terrains. They can operate on complex terrains like sand and rocks, thus having a broad application prospect. In the field of public safety, these robots can be used for rescue in water disasters and floods, including tasks such as searching for trapped personnel and providing supplies. BAI et al.\cite{b43} compared 13 different biomimetic robot models prototyped after natural animals, including propulsion principles/modes, travel speed, work efficiency, maneuverability, and stability. The study points out that amphibious robots can work in various extreme or difficult environments that are hard for humans to reach, such as under the sea and underground pipelines, to complete tasks such as search and rescue, communication, and material transmission. 
+
+The development of amphibious robots provides new tools and possibilities for search and rescue operations in complex environments. YIN et al. \cite{b44} optimized the structure and operational parameters of an amphibious robot with adaptive landing and obstacle-crossing capabilities using genetic algorithms, enhancing its obstacle-crossing ability. This research is of great significance for disaster relief and can be applied in emergency rescue missions. GUO et al.\cite{b45} designed an amphibious robot prototyped after the mudskipper, with flipper legs that enable the robot to travel on various terrains and have propulsion capabilities in water. The robot can adapt to different working environments by changing the distribution of leg stiffness. This robot can freely adapt to both land and water environments and perform tasks such as field exploration and disaster search and rescue.
+
+\subsubsection{Swarm Robots}
+Some creatures in nature, such as bees and ants, exhibit various forms of social behavior. Individuals in these groups construct complex collective behaviors through local and indirect interactions to achieve group goals, such as foraging and nest-building. Inspired by the social behaviors of these organisms, researchers have developed many control algorithms for interaction and collaboration among robots in a swarm. Compared to isolated robots, swarm robot systems have obvious advantages in dealing with complex environments and efficiently completing tasks \cite{b46}. Moreover, in the face of dangerous situations, adopting a swarm strategy increases the robustness of the system, so that the failure of one robot will not lead to the failure of the entire system.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\linewidth]{Swarm2.jpg}
+    \caption{\textbf{A type of swarm robot}}
+    \label{fig:enter-label}
+\end{figure}
+
+LU \cite{b47} et al. proposed a biomimetic algorithm to imitate ant foraging behavior for search and rescue operations through a swarm of robots in the event of natural disasters, accidents, or personnel getting lost. This algorithm can help robot swarms effectively search target areas, obtain target location information, and coordinate the actions of robots to improve search and rescue efficiency and success rates. KHAN et al. \cite{b48} proposed an ant colony optimization algorithm inspired by ant foraging behavior, simulating the information exchange and collaborative behavior of ants in the process of finding food to find the optimal path. In search and rescue, drone swarms can collaborate and transmit information through this algorithm, quickly searching and monitoring search and rescue areas, and transmitting the collected information back to the command center to improve the efficiency of search and rescue missions. LONGA et al. \cite{b49} proposed two human-machine collaborative algorithms inspired by the behavior of bacteria and bees, aimed at applying to search and rescue tasks, enabling drone swarms to work in conjunction with human search and rescue teams. By using these algorithms, drone swarms can work together to detect and locate victims distributed on the map and transmit information to on-site rescue personnel.
+
+
+\subsection{Application of Machine Learning in Bionic Robots}
+Machine learning techniques, especially deep learning and reinforcement learning, are widely applied in the autonomous control and intelligent decision-making of bionic robots. By simulating human intelligent behaviors, machine learning enables robots to learn and adapt to the environment, and make corresponding decisions based on environmental changes. Genetic Algorithm (GA) and Ant Colony Optimization (ACO) are two common machine learning algorithms used in bionic robots. The following will analyze these in conjunction with the examples mentioned above:
+\subsubsection{Genetic Algorithm (GA)}
+Based on the initial structural design parameters of the coal mine rescue robot mentioned in C.1) \cite{b32}, to improve obstacle-crossing efficiency, it is necessary to optimize the parameters of the swinging leg mechanism. According to the aforementioned obstacle-crossing analysis conclusions, the optimization design objective function can be derived as:
+\begin{align*}
+    S_{\mathrm max} & = R + L_1 + \sqrt{L^2-h^2}\\
+    H_1 & = h + R -L\sin{\alpha}\\
+    H_2 & = L + R - \sqrt{h^2+L_1^2}\sin\theta\\
+    H & = \min\Big\{H_{1\mathrm{min}},H_{2\mathrm{max}}\Big\}
+\end{align*}
+The obstacle-crossing ability of wheeled robots is mainly determined by the front swing arm, with initial swing arm posture constraints as shown in the equation below and Fig.27.
+$$\cos(\theta_1+\theta_2)=\frac{L_1\sin\theta_1+L_2\sin(\theta_1+\alpha)-H}{L}$$
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\linewidth]{图片2.jpg}
+    \caption{Initial Swing Arm Obstacle-Crossing Posture Constraints}
+    \label{fig:enter-label}
+\end{figure}
+Where: $L_1$—the distance between the centers of the walking wheels; $L$—the length of the swing arm; $R$—the wheel radius; $\theta_1$—the inclination angle of the vehicle body.
+
+These are the optimization constraint conditions.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\linewidth]{图片4.jpg}
+    \caption{MATLAB GA Algorithm Selection Process}
+    \label{fig:enter-label}
+\end{figure}
+
+Using the GA genetic algorithm to set the range of related parameter changes, select the best fitness and individuals, based on the selection process in MATLAB, as shown in Fig.28. After about 70 generations of optimization iteration, the optimal parameters of the swing arm-leg are determined to be 141.9mm.
+
+\subsubsection{Ant Colony Optimization (ACO)}
+Ant colony optimization is used for trajectory planning of the rescue robot in C.2)\cite{b37}, providing some theoretical support for the design of the flexible mechanical arm, as shown in Fig.29 and Fig.30.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\linewidth]{图片5.jpg}
+    \caption{3D Environment Modeling Module}
+    \label{fig:enter-label}
+\end{figure}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\linewidth]{图片6.jpg}
+    \caption{Trajectory Planning Results}
+    \label{fig:enter-label}
+\end{figure}
+
+\subsection{The Insufficiencies and Prospects of Biomimetic Robot Development}
+\subsubsection{Existing Research Issues and Insufficiencies}
+Although compared to traditional search and rescue robots, existing biomimetic robots show advantages in performance, they still have many problems and defects. Considering stability and control complexity, legged robots are currently mostly four-legged or six-legged. However, when walking and jumping, the ground impact that the robot's foot end needs to withstand may reach several times that of the standing posture\cite{b50}. At the same time, the insufficient strength of the foot end also limits the robot's load capacity. In addition, although the static stability control of legged robots is relatively mature, the ability to maintain dynamic balance in complex terrains at disaster scenes still needs to be strengthened.
+
+The gait of snake robots on the plane, such as undulating crawling and wriggling, is relatively mature. However, due to the insufficiency in the structure of the trunk unit, flexibility, and motion control\cite{b51}, the robot's three-dimensional motion ability is poor. How to improve the three-dimensional obstacle-crossing ability and adapt the snake robot to the uneven non-structural environment is an issue that needs to be solved urgently in this direction.
+
+The research on flight robots mimicking birds mainly focuses on how to develop an institution that can generate enough physiology\cite{b52}, and there is relatively less research on flight control strategies. In addition, since flight robots are generally small in size, the installation space for batteries, sensors, and control modules is limited, so efficiency and endurance are greatly limited.
+
+Compared with other robots, amphibious robots need to switch between water and land modes, so the leg structure is more complex and larger in volume than general legged robots\cite{b53}. The stability of the existing robots during switching still needs to be improved. At the same time, underwater robots need enough strength and structural waterproofness to cope with the water pressure when diving to a certain depth, and when working on land, they need to better adapt to the beach and wetland environments adjacent to water.
+
+The main problems faced by swarm robots are how to effectively manage and coordinate the cooperation between multiple robots, such as accurately estimating the performance of the group and designing robot controllers to provide the desired results. In addition, disaster scenes are high-risk and complex environments, and the search and rescue process still requires human supervision\cite{b54}. Therefore, how to coordinate the interaction between humans and robots is also a problem that needs to be considered. When a robot in the group is damaged or a new individual joins, how to re-plan the route and allocate tasks to adapt to the new situation is also a difficult point in current research.
+
+\subsubsection{Future Development Trends}
+With the continuous progress in bionics and other fields, various bionic robots are gradually transitioning from research experiments to practical applications, becoming important tools for disaster response and emergency rescue missions. Facing the complex and harsh environment of disaster sites, researchers need to carefully consider various aspects of the robot's performance, including material selection and structural sealing. At the same time, the design and development of bionic robots have generally shown three development trends in recent years.
+
+\textbf{1.Miniaturization.} In disaster sites, large machinery may be destructive to the environment, leading to accidents such as debris collapse. Small robots are low in cost, consume less energy, and have better flexibility, so many bionic robots are designed with a trend towards miniaturization.
+
+\textbf{2.Intelligence.} The development of bionic robots involves the integration of knowledge from various fields such as biology, robotics, materials science, and artificial intelligence. With the continuous improvement of related technologies, the development of intelligent robots that can adapt autonomously to the complex post-disaster environment has become a trend.
+
+\textbf{3.Swarming.} In recent years, swarm robots have become a new research direction in this field. How to control the interactive behaviors between humans and robots, and between robots, to make the swarm more efficient in executing search and rescue tasks may also become a hot topic of research.
+
+\section{\textbf{Conclusion}}
+For now, we have introduced three of the technologies for urban resilience based on machine learning and deep learning and confirmed their usage and righteous impact on cities. As city is a well-organized and complex system\cite{b1}, it is of great necessity to cast a view in what way they will cooperate and prevent from horrifying urban catastrophe. The following presents a simple simulation of a middle-sized city responding to a severe typhoon.
+\subsection{Simulation and Response}
+\subsubsection{\textbf{Simulating an Urban Circumstance}}
+The simulation starts with a littoral city that contains a population density of 2,000 people per square kilometer, namely Raccoon. Raccoon is composed of 5 districts. The power and transportation system are in the best condition. The latest data of local landscape have already been stored in the remote sensing and robot dispatching system.
+
+The time axis starts at when a severe typhoon of category 15, named as Haishen, landed on the coastline of Raccoon city. 
+
+\subsubsection{\textbf{Response to Haishen and Disasters Following by}}
+Additionally before the landing, Pangu-Weather\cite{b15} had forecast the route of Haishen and issued a warning notification two days in advance, cross compared with forecasts generated by numeirical methods. The evacuation and protection procedure of people in DID(densly inhabited district)s had been accomplished before the befalling of Haishen.
+
+In the duration of Haishen hitting Raccoon city, as the data of Raccoon's landscape had been stored, the remote sensing system could be utilized to speculate on the likelihood of landslide and mudslide happening in certain potentially hazardous areas, especially on the skirt of the city(as well as rural ones), where forests and raw lands covered most of the space, and to issue the notification to local government to conduct temporary evacuation. Simultaneously the satellites and surficial detecting device would keep monitoring specific weather data and uploaded into the system, updating data to generate more speculations.
+
+However, the remote sensing system was unable to cover all the potentially dangerous areas and send notifications. When a landslide, mudslide or even building collapse happens in an undetected area, with people being buried under mud or ruins, it's unimaginable to expect rescue teams to quickly find and dig out the sufferers. Therefore, bionic robots come in handy. Based on the original structures of these robots, briefly we here introduce a concept, namely ecological cooperation. What it means is to organize the bionic robots in resemblance of a real eco-system, involving complicated algorithms to unite each robots as one based on separated designed action modules that imitate the real creatures.
+
+Take the incident of building collapse in the process of Haishen as an example. With victims buried under the ruins, the snake robot goes into the ruins and detect the thermal signals, while aerial robot clusters levitate and detect from the sky. Once the victims are detected, the rescue crew members, along with legged robots, quickly respond and conduct the rescue operation. The legged robots, with more stability than people, are employed to carry and transport the injured victims. That's how ecological cooperation works in disaster response.
+
+Pangu-Weather forecast the weather conditions after Haishen went off the coastline, and remote sensing system, along with bionic robot dispatching system, enhanced the rescue and rebuilding process in the city. \textbf{The urban resilience was greatly improved based on these technologies based on machine learning and deep learning.}
+
+\subsection{Acknowledgement and Thanks}
+We much appreciate you can spare your precious time reading this essay. It is our maiden try after all. What's more, the complement of this work relies on the support of Prof. Ouyang Min, who is also our corresponding author. 
+
+We believe one day the intelligent and resilient city can be fully and entirely achieved by using the latest technologies based on machine learning and deep learning. We believe our cities and life will be much much more safe and resilient when confronting nature itself.
+
+%参考文献引用
+\bibliographystyle{IEEEtran}
+\begin{thebibliography}{00}
+
+\bibitem{b1} Smart A, Smart J. Urbanization and the global perspective[J]. Annual Review of anthropology, 2003, 32(1): 263-285.
+\bibitem{b2} Xi Jinping et al. Hold High the Great Banner of Socialism with Chinese Characteristics and Strive in Unity to Build a Modern Socialist Country in All Respects:Report to the 20th National Congress of the Communist Party of China. People's Publishing House, 2022.
+\bibitem{b3} Vlahov, D., Galea, S. Urbanization, urbanicity, and health. J Urban Health 79 (Suppl 1), S1–S12 (2002).
+\bibitem{b4} Hall P. Cities in Civilization. New York: Pantheon Books; 1998.
+\bibitem{b5} Mumford L. The City in History: Its Origins, Its Transformations, and Its Prospects. New York: Harcourt, Brace and Company; 1961.
+\bibitem{b6} Kendall D. Social Problems in a Diverse Society. New York: Allyn and Bacon; 1998.
+\bibitem{b7} Berry B J L. Urbanization[J]. Urban ecology: an international perspective on the interaction between humans and nature, 2008: 25-48.
+\bibitem{b8} Polivka B J. The great London smog of 1952[J]. AJN The American Journal of Nursing, 2018, 118(4): 57-61.
+\bibitem{b9} Zhi-Yong S. Medical support in the Tangshan earthquake: a review of the management of mass casualties and certain major injuries[J]. Journal of Trauma and Acute Care Surgery, 1987, 27(10): 1130-1135.
+\bibitem{b10} the U.N. GAR Special Report 2024, 112-113.
+\bibitem{b11} Meerow S, Newell J P, Stults M. Defining urban resilience: A review[J]. Landscape and urban planning, 2016, 147: 38-49.
+\bibitem{b12} Chelleri L, Waters J J, Olazabal M, et al. Resilience trade-offs: addressing multiple scales and temporal aspects of urban resilience[J]. Environment and Urbanization, 2015, 27(1): 181-198.
+\bibitem{b13} Pearson L J, Pearson C. Adaptation and transformation for resilient and sustainable cities[M]//Resilient sustainable cities. Routledge, 2014: 242-248.
+\bibitem{b14} Ribeiro P J G, Gonçalves L A P J. Urban resilience: A conceptual framework[J]. Sustainable Cities and Society, 2019, 50: 101625.
+\bibitem{b15} Bi, K., Xie, L., Zhang, H. et al. Accurate medium-range global weather forecasting with 3D neural networks. Nature 619, 533–538 (2023).
+\bibitem{b16} Garg, S., Rasp \& S., Thuerey, N. WeatherBench probability: a benchmark dataset for probabilistic medium-range weather forecasting along with deep learning baseline models. Preprint at https://arxiv.org/abs/2205.00865 (2022).
+\bibitem{b17} Tellman, B., Sullivan, J. A., Kuhn, C., Kettner, A. J., Doyle, C. S., Brakenridge, G. R., Erickson, T. A., \& Slayback, D. A. (2021). Satellite imaging reveals increased proportion of population exposed to floods. Nature, 596, 5 August 2021. doi: 10.1038/s41586-021-03695-w.
+\bibitem{b18} Pathak, J. et al. FourCastNet: a global data-driven high-resolution weather model using adaptive Fourier neural operators. Preprint at https://arxiv.org/abs/2202.11214 (2022).
+\bibitem{b19} Bauer, P., Thorpe, A. \& Brunet, G. The quiet revolution of numerical weather prediction. Nature 525, 47–55 (2015).
+\bibitem{b20}  Skamarock, W. C. et al. A Description of the Advanced Research WRF Version 2 (National Center For Atmospheric Research Mesoscale and Microscale Meteorology Division, 2005).
+\bibitem{b21} Molteni, F., Buizza, R., Palmer, T. N. \& Petroliagis, T. The ECMWF ensemble prediction system: methodology and validation. Q. J. R. Meteorol. Soc. 122, 73–119 (1996).
+\bibitem{b22} Ritchie, H. et al. Implementation of the semi-Lagrangian method in a high-resolution version of the ECMWF forecast model. Mon. Weather Rev. 123, 489–514 (1995).
+\bibitem{b23} Bougeault, P. et al. The THORPEX interactive grand global ensemble. Bull. Am. Meteorol. Soc. 91, 1059–1072 (2010).
+\bibitem{b24} Hersbach, H. et al. The ERA5 global reanalysis. Q. J. R. Meteorol. Soc. 146, 1999–2049 (2020).
+\bibitem{b25} Li Zhongdong; The Latest Bionic Disaster Relief Robots [J]. Hunan Safety and Disaster Prevention, 2017(02):50-51.
+\bibitem{b26} Liu Zhenliang; Yuan Wei; Li Su Chao; Earthquake and Secondary Sudden Disasters Road Bridge Network Resilience Assessment [J]. China Safety Science Journal, 2022(08):180-188.
+\bibitem{b27} Yu Zhenzhong; Cai Kaiting; Liu Wei; Zheng Weizou; A Review of Rescue Robot Technology [J]. Journal of Jiangnan University (Natural Science Edition), 2015(04):124-130.
+\bibitem{b28} Liu Jizhao; Liu Xuanang; Chen Fengfeng; Liu Renjie; Huang Jin; Development of Bionic Obstacle Detection Vehicle [J]. China Mechanical Engineering, 2012(14):29-32.
+\bibitem{b29} Qin Hui Bin, Zheng Zhenzhen, Liu Yulong, et al. Design of Gear Transmission Structure Bionic Crab Robot [J]. Mechanical Transmission, 2015, 39(7):79-82.
+\bibitem{b30} Qian Shanhua, Ge Shirong, Wang Yongsheng, et al. Research Status of Rescue Robots and Application in Coal Mine Rescue [J]. Robotics, 2006, 28(3):350-354.
+\bibitem{b31} Liang Meiyan. Design and Experimental Study of Quadruped Bionic Robot Based on STM32 [J]. Journal of Testing Technology, 2019, 33(1):34-42.
+\bibitem{b32} Xiao Xiongliang, Fang Yue'e. Optimization Design of Hydraulic Drive Coal Mine Rescue Robot [J]. Mechanical Design and Manufacturing, 2020(3):265-268.
+\bibitem{b33} BAI L, GUAN J, CHEN X, et al. An Optional Passive/Active Transformable Wheel-Legged Mobility Concept for Search and Rescue Robots [J]. Robotics and Autonomous Systems, 2018, 107:145-155.
+\bibitem{b34} YANG M, KANG R, CHEN Y. A Highly Mobile Crawling Robot Inspired by Hexapod Insects [C]//2019 IEEE International Conference on Robotics and Biomimetics (ROBIO). IEEE, 2019:1797-1802.
+\bibitem{b35} ZHANG Y H, ZHENG L, GE W J, et al. Mechanism Design and Optimization of a Bionic Kangaroo Jumping Robot [C]//IOP Conference Series: Materials Science and Engineering. IOP Publishing, 2018.
+\bibitem{b36} TRANSETH A A, PETTERSEN K Y, LILJEBÄCK P. A Survey on Snake Robot Modeling and Locomotion [J]. Robotica, 2009, 27(7):999-1015.
+\bibitem{b37} Li Yi, Ma Xiangyu, Li Yuan. Rescue Robot Design and Analysis [J]. Coal Mine Machinery, 2018, 39(9):12-14. DOI:10.13436/j.mkjx.201809004.
+\bibitem{b38} SAHU D, KODI R, SINGH S. Gait Analysis of Multi-Step Climbing Active Wheeled Snake Robot [C]//2019 4th International Conference on Robotics and Automation Engineering (ICRAE). IEEE, 2019:18-23.
+\bibitem{b39} ULLAH S I, MAHMOOD T. Autonomous Navigation and Mapping of Snake Robot for Urban Search and Rescue[C]//2023 International Conference on Robotics and Automation in Industry(ICRAI). IEEE, 2023:1-8.
+\bibitem{b40} Li Liang, Liu Xiaoyong, Xu Jianqiang, et al. Research on Thermal Damage Experiment of Unmanned Aerial Vehicles in Fire Scene Environment [J]. Journal of China Safety Science, 2021, 31(02): 82-88. DOI: 10.16265/j.cnki.issn1003-3033.2021.02.012.
+\bibitem{b41} MAHJOUBI H, BYL K. Efficient Flight Control via Mechanical Impedance Manipulation:Energy Analyses for Hummingbird-Inspired MAVs[J]. Journal of Intelligent\& Robotic Systems, 2014, 73:487-512.
+\bibitem{b42} DUBA P K, SRIRAM G C, Rajalakshmi P. Autonomous Bio-Inspired Micro Aerial Vehicle(MAV)[C]//2022 IEEE IAS Global Conference on Emerging Technologies(GlobConET). IEEE, 2022:661-666.
+\bibitem{b43} BAI X, SHANG J, LUO Z, et al. Development of Amphibious Biomimetic Robots[J]. Journal of Zhejiang University-SCIENCE A, 2022, 23(3):157-187.
+\bibitem{b44} Qian Yin, He Wang, Zhen Song, et al. Optimization design of amphibious bionic robot landing adaptive obstacle-crossing mechanism [J]. Journal of National University of Defense Technology, 2023, 45(1): 208-214. DOI: 10.11887/j.cn.202301024.
+\bibitem{b45} GUO N, BAI Z, GAO W, et al. Passively Deformable Flipper Legs for An Amphibious Quadruped[C]//2021 IEEE International Conference on Real-time Computing and Robotics(RCAR). IEEE, 2021:738-743.
+\bibitem{b46} ROY D, MAITRA M, BHATTACHARYA S. Adaptive Formation-Switching of a Multi-Robot System in an Unknown Occluded Environment Using BAT Algorithm[J]. International Journal of Intelligent Robotics and Applications, 2020, 4:465-489.
+\bibitem{b47} LU Q. AN EFFICIENT MULTIPLE-PLACE Foraging Algorithmn Ant-Hocnet Routing Protocol Based on Optimized Fuzzy Logic for Swarm of UAVs in FANET[J].Wireless Communications and Mobile Computing, 2022, 2022:1-12.
+\bibitem{b48} KHAN S, KHAN M Z, KHAN P, et al. An Ant-Hocnet Routing Protocol Based on Optimized Fuzzy Logic for Swarm of UAVs in FANET[J]. Wireless Communications and Mobile Computing, 2022, 2022:1-12.
+\bibitem{b49} LONGA M E, TSOURDOS A, INALHAN G. Human-Machine Network Through Bio-Inspired Decentralized Swarm Intelligence and Heterogeneous Teaming in SAR Operations[J]. Journal of Intelligent \& Robotic Systems, 2022, 105(4):88.
+\bibitem{b50} Yang Junjie, Sun Hao, Wang Changhong, et al. A Review of Quadruped Robot Research [J]. Navigation, Location and Timing, 2019, 6(5): 61-73. DOI: 10.19306/j.cnki.2095-8110.2019.05.009.
+\bibitem{b51} Su Zhong, Zhang Shuangbiao, Li Xingcheng. A Review of the Research and Development of Serpentine Robots [J]. Chinese Mechanical Engineering, 2015(3): 414-425. DOI: 10.3969/j.issn.1004-132X.2015.03.022. 
+\bibitem{b52} MALHAN R, BENEDICT M, CHOPRA I. Experimental Studies to Understand the Hover and Forward Flight Performance of a MAV-Scale Flapping Wing Concept [J]. Journal of the American Helicopter Society, 2012, 57(2): 1-11. 
+\bibitem{b53} Yang Qinghai, Yu Junzhi, Tan Min, et al. A Review of Amphibious Bionic Robot Research [J]. Robotics, 2007, 29(6): 601-608. DOI: 10.3321/j.issn:1002-0446.2007.06.016.
+\bibitem{b54} Gu Jun, Zhang Yu, Fan Dong. A Review of Swarm Robot Research [J]. Chemical Automation and Instrumentation, 2018, 45(2): 95-99. DOI: 10.3969/j.issn.1000-3932.2018.02.001.
+\bibitem{b55} China Weather Network. (2023, May 25). Super Typhoon Mawar's intensity slowly strengthens, and severe wind and rain will hit multiple maritime areas successively.
+\bibitem{b56} China News Service. (2023, May 26). Super Typhoon Mawar lands in northern Guam, USA, causing widespread power outages.
+\bibitem{b57} China Meteorological News. (2023, May 26). Strong winds! Heavy rain! The super typhoon Mawar that severely affected Guam could become the "King of Wind"? 
+\bibitem{b58} Hinton, G. E. et al. (2006). Reducing the dimensionality of data with neural networks. Science, 313(5786), 504-507.
+\bibitem{b59} LeCun, Y. et al. (2015). Deep learning. Nature, 521(7553), 436-444.
+\bibitem{b60} Vaswani, A. et al. (2017). Attention is all you need. In 31st Conference on Neural Information Processing Systems (NIPS), Long Beach, CA, USA.
+\bibitem{b61} Rosenblatt, F. (1958). The perceptron: A probabilistic model for information storage and organization in the brain. Psychological review, 65(6), 386.
+\bibitem{b62} LeCun, Y. et al. (1998). Gradient-based learning applied to document recognition. Proceedings of the IEEE, 86(11), 2278-2324.
+\bibitem{b63} Krizhevsky, A. et al. (2012). ImageNet classification with deep convolutional neural networks. In Advances in neural information processing systems, pp. 1097-1105.
+\bibitem{b64} Devlin, J. et al. (2018). BERT: Pre-training of deep bidirectional transformers for language understanding. In Proc. Conference North American Chapter of the Association of Computational Linguistics, pp. 4171–4186.
+\bibitem{b65} Dosovitskiy, A. et al. (2020). An image is worth 16x16 words: Transformers for image recognition at scale. 
+\bibitem{b66} \textit{Science, Technology, \& Human Values}, 1988.7.1
+\bibitem{b67} CHEN Shengzhe and CHEN Biao .Application of Infrared technology in military, 2006
+\bibitem{b68} Li Zhiwei et al. Inversion of some In SAR geophysical parameters, 2022
+\bibitem{b69} MA Li-Yun, WANG Yuming, CHEN Asia. Electromagnetic interference effect of continuous wave on LIDAR[J]. Intense Laser and Particle Beam, 2021, 33: 123012.
+\bibitem{b70} LI Xiaoen et al, Application of InSAR technology in landslide hazard： Progress and prospects,2021-0207
+\bibitem{b71} Zhai Wei.et al,Chinese Academy of Sciences, PolSAR Image Collapsed Building Extraction Based on Texture Features.2016
+\bibitem{b72} Yuan XiaoXiang . Institute of Earthquake Prediction, China Earthquake Administration. Quantitative assessment of building damage in the Jiuzhaigou earthquake based on unmanned aerial imagery 2017
+\bibitem{b73} Shuhui Jiang. The Interpretation and Analysis of Landslide Disaster Based on Remote sensing in  Wulong county, Chongqing
+\bibitem{b74} V.Singhroy.Sar. integrated techniques for geohazard assessment.Advances in Space Research,1995,15(11):67-78.
+\bibitem{b75} V.Singhroy, K.E.Mattar and A.L.Gray, Landslide cliara-sation in Canada using interferometric Sar and combined Sar and TM images.  Advances in Space Research,1998,21(3):465-476.
+\bibitem{b76} H.Gomez, T.Kavzoghu. Assessment of shallow landslides susceptibility using artificial neural networks in Jabonosa River Basin, Venezuela Engineering Geology,2005,78:11-27.
+\bibitem{b77} Cees J.van westen. The Modeling of Landslide Hazards Using GIS. Surveys in GoePhysics [M].2000,21:241-255.
+\bibitem{b78} Guzzetti, F., et al.Estimating the quality of landslide susceptibility models. Geomorphology,2006.81(1-2):p.272-299.
+
+\end{thebibliography}
+
+\end{document}
