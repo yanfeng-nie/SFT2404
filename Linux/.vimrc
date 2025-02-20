@@ -1,4 +1,3 @@
-"Recommended vim setting
 filetype plugin indent on
 set confirm
 set syntax=on
@@ -22,6 +21,7 @@ set noswapfile
 
 set ignorecase
 set hlsearch
+set incsearch
 
 set enc=utf-8
 set langmenu=zh_CN.UTF-8
@@ -29,6 +29,12 @@ set helplang=cn
 
 set laststatus=2
 set cmdheight=2
+
+set mouse=a
+set selection=exclusive
+set selectmode=mouse,key
+
+set autowrite
 
 :inoremap ( ()<left>
 :inoremap [ []<left>
@@ -41,11 +47,11 @@ autocmd BufNewFile *.cpp,*.[ch],*.sh,*.java exec ":call SetTitle()"
 func SetTitle()
 "	if &filetype == 'sh'
 		call setline(1,            "/***********************************************************")
-		call append(line("."),     "    > File Name: ".expand("%") )
-		call append(line(".")+1,   "    > Author: ________")
-		call append(line(".")+2,   "    > Mail: __________")
-		call append(line(".")+3,   "    > Created Time: ".strftime("%c"))
-		call append(line(".")+4,   "    > Modified Time:".strftime("%c"))
+		call append(line("."),     "  > File Name: ".expand("%") )
+		call append(line(".")+1,   "  > Author: Nie Yanfeng")
+		call append(line(".")+2,   "  > Mail: e83242650@163.com")
+		call append(line(".")+3,   "  > Created Time: ".strftime("%c"))
+		call append(line(".")+4,   "")
 		call append(line(".")+5,   "***********************************************************/")
 		call append(line(".")+6,   "")
 "	if &filetype == 'cpp'
@@ -79,9 +85,44 @@ autocmd BufNewFile * normal G
 
 function SetLastModifiedTime(lineno)
 	let modif_time = strftime("%c")
-	let line = '    > Modified Time:'.modif_time
-	call setline(6, line)
-
+	if a:lineno == "-1"
+		let line = getline(3)
+	else
+		let line = getline(a:lineno)
+	endif
+	if line == '^\sLast Modified'
+		let line = substitute(line, ':\s\+.*\d\{3\}', ':'.modif_time, "")
+	else 
+		let line = '  > Last Modified: '.modif_time
+	endif
+	if a:lineno == '-1'
+		call setline(6, line)
+	else
+		call append(a:lineno, line)
+	endif
 endfunction
 
-au BufNewFile *.v,*.c call SetLastModifiedTime(-1)
+au BufWrite *.v,*.c,*.cpp,*.java call SetLastModifiedTime(-1)
+
+map <C-A> ggVGY
+map! <C-A> <Esc>ggVGY
+map <F12> gg=G 
+
+vmap <C-c> "+y
+
+map <F3> :tabnew .<CR>
+map <C-F3> \be
+
+map <F5> :call CompileRunGcc()<CR>
+func! CompileRunGcc()
+	exec "w"
+	if &filetype == 'c'
+		exec "!g++ % -o %<"
+		exec "! ./%<"
+	elseif &filetype == 'cpp'
+		exec "!g++ % -o %<"
+		exec "! ./%<"
+	elseif &filetype == 'sh'
+		:!./%
+	endif
+endfunc
